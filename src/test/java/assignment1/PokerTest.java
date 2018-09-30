@@ -3,53 +3,59 @@ package assignment1;
 import junit.framework.TestCase;
 public class PokerTest extends TestCase{
 	
+	Poker hand = new Poker;
+	Poker hand2 = new Poker;
+	
 	public void testHand(){
 		
-		Poker poker = new Poker;
-		
-	    assertEquals(true, poker.);
+	    assertEquals(true, hand.equals(hand));
 		
 	}
 	
 	
-	
-	public void hasHighCard(){
-		
+	public void testDealCards(Poker hand){
+	    assertEquals(true, hand.add());
+	    assertEquals(true, hand2.add());
+
 	}
 	
-	public void hasPair(){
+	public void hasHighCard(Poker hand){
+		
+	}
+    public void hasPair(Poker hand){
 		
 	}
 
-    public void hasTwoPair(){
+    public void hasTwoPair(Poker hand){
     	
     }
 
-    public void hasThreeOfAKind(){
+    public void hasThreeOfAKind(Poker hand){
     	
     }
 
-    public void hasStraight(){
+    public void hasStraight(Poker hand){
     	
     }
 
-    public void hasFlush(){
+    public void hasFlush(Poker hand){
     	
     }
 
-    public void hasFullHouse(){
+    public void hasFullHouse(Poker hand){
     	
     }
 
-    public void hasFourOfAKind(){
+    public void hasFourOfAKind(Poker hand){
     	
     }
 
-    public void hasStraightFlush(){
+    public void hasStraightFlush(Poker hand){
     	
     }
     
-    public void hasRoyalFlush(){
+    public void hasRoyalFlush(Poker hand){
     	
     }
+	
 }
