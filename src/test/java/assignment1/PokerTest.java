@@ -13,20 +13,22 @@ public class PokerTest extends TestCase{
 	}
 	
 	
-	public void testDealCards(Poker hand){
+	public void testDealCards(Poker hand, Poker hand2){
 	    assertEquals(true, hand.add());
 	    assertEquals(true, hand2.add());
 
 	}
 	
-	public void hasHighCard(Poker hand){
-		
+	public void hasHighCard(Poker hand, Poker hand2){
+		assertEquals(true, hand.highCard());
+		assertEquals(true, hand2.highCard());
 	}
-    public void hasPair(Poker hand){
+	
+    public void hasPair(Poker hand, Poker hand2){
 		
 	}
 
-    public void hasTwoPair(Poker hand){
+    public void hasTwoPair(Poker hand, Poker hand2){
     	
     }
 
