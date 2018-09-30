@@ -25,7 +25,8 @@ public class PokerTest extends TestCase{
 	}
 	
     public void hasPair(Poker hand, Poker hand2){
-		
+		assertEquals(true, hand.pair());
+		assertEquals(true, hand2.pair());
 	}
 
     public void hasTwoPair(Poker hand, Poker hand2){
