@@ -8,36 +8,25 @@ public class Poker
 	String[] hand2 = new String[5];
 	private Scanner sc;
 	
-	public void fileReader(){
+	public void fileReader(String fname){
 		//file reads for cards then converts scanner to string and splits 
 		//the whitespace in the string
 		try{
-			File fileName = new File("/Users/Soltan/Desktop/test.txt");   
+			
+			
+			File fileName = new File("/Users/Soltan/Desktop/" + fname);   
 			sc = new Scanner(fileName);
 		    String line = sc.nextLine();
 		    cards = line.split(" ");
+		    sc.close();
 		} 
 		 catch(FileNotFoundException ex){
 		        System.out.println (ex.toString());
 		        System.out.println("File not found");
 		}
-		//Testing cards are printing right in sequence
-		for(int i = 0; i < cards.length; i++)
-		{
-			System.out.println("this is " +  i + " card " + cards[i]);
-		}
-	}
-	
-	public String[] getCards(){
-		return hand;
-	}
-	
-	public String[] getAICards(){
-		return hand2;
 	}
 	
 	public boolean addCard(){
-		fileReader();
 		int i;
 		for( i = 0; i<5; i++){
 			hand[i]=cards[i];
@@ -65,9 +54,16 @@ public class Poker
 		}
 	}
 	
-	//public boolean flush(String[] cards){
-	//	char suit = cards[0].charAt(0);
-	//}
+	public boolean checkFlush(){
+		char suit = hand[0].charAt(0);
+		if(hand[1].charAt(0) == suit && hand[2].charAt(0) == suit && hand[3].charAt(0) == suit && hand[4].charAt(0) == suit)
+		{
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 	
 	
 }

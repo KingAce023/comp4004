@@ -7,10 +7,30 @@ public class PokerTest extends TestCase{
 	Poker hand = new Poker();
 	
 	public void testDealCards(){
+		hand.fileReader("test.txt");
 	    assertEquals(true, hand.addCard());
 	    assertEquals(true, hand.addCard2());
 
 	}
+	 public void testHasFlush(){
+		    hand.fileReader("test.txt");
+		 	hand.addCard();
+		 	
+	    	assertEquals(true, hand.checkFlush());
+	    	
+	    	hand.fileReader("test2.txt");
+	    	hand.addCard();
+	    	assertEquals(false,hand.checkFlush());
+	    	
+	    	
+	    	//hand.fileReader("test3.txt");
+	    	//assertEquals(false,hand.checkFlush());
+	    	
+	    	//assertEquals(false,hand.checkFlush());
+	    	
+	    	//assertEquals(true, hand.getAICards().flush());
+	    }
+	 
 	
 	/*public void testHasHighCard(){
 		assertEquals(true, hand.highCard(hand.getCards()));
