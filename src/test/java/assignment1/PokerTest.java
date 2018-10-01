@@ -1,17 +1,18 @@
 package assignment1;
 
 import junit.framework.TestCase;
+
 public class PokerTest extends TestCase{
 	
 	Poker hand = new Poker();
 	
 	public void testDealCards(){
-	    assertEquals(true, hand.addCard(hand.getCards()));
-	    assertEquals(true, hand.addCard2(hand.getAICards()));
+	    assertEquals(true, hand.addCard());
+	    assertEquals(true, hand.addCard2());
 
 	}
 	
-	public void testHasHighCard(){
+	/*public void testHasHighCard(){
 		assertEquals(true, hand.highCard(hand.getCards()));
 		assertEquals(true, hand.highCard(hand.getAICards()));
 	}
@@ -56,5 +57,5 @@ public class PokerTest extends TestCase{
     public void testHasRoyalFlush(){
     	
     }
-	
+	*/
 }
