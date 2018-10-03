@@ -4,21 +4,37 @@ import junit.framework.TestCase;
 
 public class PokerTest extends TestCase{
 	
-	Poker hand = new Poker();
+	Poker deck = new Poker();
+	Hand aiHand = new Hand();
+	Hand pHand = new Hand();
 	
 	public void testDealCards(){
-		hand.fileReader("test.txt");
-	    assertEquals(true, hand.addCard());
-	    assertEquals(true, hand.addCard2());
-
+		deck.fileReader();
+		deck.readCardsFromFile();
+		
+	    assertEquals(true, pHand.add(deck.drawCard()));
+	    assertEquals(true, pHand.add(deck.drawCard()));
+	    assertEquals(true, pHand.add(deck.drawCard()));
+	    assertEquals(true, pHand.add(deck.drawCard()));
+	    assertEquals(true, pHand.add(deck.drawCard()));
+	    
+	    assertEquals(true, aiHand.add(deck.drawCard()));
+	    assertEquals(true, aiHand.add(deck.drawCard()));
+	    assertEquals(true, aiHand.add(deck.drawCard()));
+	    assertEquals(true, aiHand.add(deck.drawCard()));
+	    assertEquals(true, aiHand.add(deck.drawCard()));
+	    pHand.showHand();
+	    aiHand.showHand();
 	}
-	 public void testHasFlush(){
-		    hand.fileReader("test.txt");
-		 	hand.addCard();
+	 /*public void testHasFlush(){
+		    hand.fileReader();
+		    hand.readCardsFromFile();
+		 	hand.drawCard();
 		 	
 	    	assertEquals(true, hand.checkFlush());
+	    	//assertEquals(false,hand.hand2.checkFlush());
 	    	
-	    	hand.fileReader("test2.txt");
+	    	/*hand.fileReader("test2.txt");
 	    	hand.addCard();
 	    	assertEquals(false,hand.checkFlush());
 	    	
@@ -28,10 +44,10 @@ public class PokerTest extends TestCase{
 	    	
 	    	//assertEquals(false,hand.checkFlush());
 	    	
-	    	//assertEquals(true, hand.getAICards().flush());
-	    }
+	    	//assertEquals(true, hand.getAICards().flush());*/
+	   // }
 	 
-	
+
 	/*public void testHasHighCard(){
 		assertEquals(true, hand.highCard(hand.getCards()));
 		assertEquals(true, hand.highCard(hand.getAICards()));
